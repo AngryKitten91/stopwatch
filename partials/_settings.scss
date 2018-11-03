@@ -1,0 +1,41 @@
+$maxWidth: 1200px;
+
+$smallScreen: 600px;
+
+$timerFontSize: 5rem;
+$fontSize: 1.3rem;
+$fontSizeSmall: 1rem;
+
+$colorGreen: #4FB99F;
+$colorYellow: #F2B134;
+$colorOrange: #ED553B;
+$colorBlue: #112F41;
+$colorDarkBlue: #222222;
+$colorWhite: #ffffff;
+
+@mixin fontRoboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+@mixin border {
+    border: 2px solid $colorDarkBlue;
+}
+
+@mixin borderRadius{
+    border-radius: 5px;
+}
+
+@mixin infoBox ($color) {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            background-color: $color;
+            color: $colorWhite;
+            width: 100%;
+            padding: 30px;
+            font-size: $fontSize;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+}
+

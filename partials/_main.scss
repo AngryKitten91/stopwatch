@@ -1,0 +1,157 @@
+body {
+    // font-family: 'Open Sans', sans-serif;
+    @include fontRoboto;
+    font-size: $fontSize;
+    color: $colorBlue;
+}
+
+.o {
+    &-wrap {
+        max-width: $maxWidth;
+        margin: 0 auto;
+        padding: 30px;
+    }
+
+    &-flex {
+        display: flex;
+        align-items: center;
+
+        &__item {}
+
+        &--center {
+            justify-content: center;
+        }
+
+        &--spaceBetween {
+            justify-content: space-between;
+        }
+
+    }
+
+}
+
+.c {
+    &-container {}
+
+    &-timer {
+        margin: 20px 0;
+        padding: 20px;
+        overflow: hidden;
+        @include border;
+        @include borderRadius;
+    }
+
+    &-timer__name {
+        font-size: $fontSize;
+    }
+
+    &-timer__value {
+        font-weight: normal;
+        font-size: $timerFontSize;
+    }
+
+    &-timer__buttons {
+        font-size: $fontSize;
+        color: $colorWhite;
+    }
+
+    &-button {
+        margin: 0 15px;
+        padding: 15px;
+        display: block;
+        background-color: $colorGreen;
+        // @include border;
+        @include borderRadius;
+        transition: background-color 0.2s ease;
+
+        &--close {
+            margin: 0;
+            font-size: $fontSizeSmall;
+        }
+
+        &:hover {
+            background-color: $colorOrange;
+            cursor: pointer;
+        }
+    }
+
+    &-input {
+        margin: 20px 0;
+
+        &__input {
+            width: 80%;
+            padding: 20px;
+            @include border;
+            border-radius: 5px 0 0 5px;
+            box-shadow: none;
+            transition: box-shadow 0.30s ease-in-out;
+            outline: none;
+
+            &:focus {
+                box-shadow: 0 0 5px $colorGreen;
+                border-top: 2px solid $colorGreen;
+                border-left: 2px solid $colorGreen;
+                border-bottom: 2px solid $colorGreen;
+            }
+        }
+
+        &__button {
+            text-align: center;
+            width: 20%;
+            padding: 20px 0;
+            color: $colorWhite;
+            display: block;
+            background-color: $colorGreen;
+            @include border;
+            border-radius: 0 5px 5px 0;
+            border-left: 0 !important;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                background-color: $colorOrange;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &-box {
+        &__success {
+            @include infoBox($colorGreen);
+        }
+
+        &__error {
+            @include infoBox($colorOrange);
+        }
+    }
+}
+
+.u {
+    &-fadeOut {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s linear 300ms, opacity 400ms;
+    }
+
+    &-fadeIn {
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s linear 0s, opacity 1000ms;
+    }
+}
+
+@media screen and (max-width: $smallScreen) {
+    html {
+        font-size: 10px;
+    }
+
+    .c {
+        &-button {
+            padding: 10px;
+        }
+
+        &-timer__value {
+            margin: 10px 0;
+        }
+        
+    }
+}
